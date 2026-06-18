@@ -2,19 +2,19 @@ services:
 
   web:
     build: .
+    container_name: django_app
     env_file:
       - .env
-    container_name: django_app
-    command: gunicorn gestion_colis.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - .:/app
-      - ./staticfiles:/app/staticfiles
+      - static_volume:/app/staticfiles
+      - media_volume:/app/media
     ports:
       - "8000:8000"
     depends_on:
       - db
     environment:
-      - DEBUG=1
+      - DEBUG=0
       - DB_NAME=colis_db
       - DB_USER=admin
       - DB_PASSWORD=admin123
@@ -29,11 +29,10 @@ services:
       POSTGRES_DB: colis_db
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin123
-    ports:
-      - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 
 volumes:
   pgdata:
-  
+  static_volume:
+  media_volume:
