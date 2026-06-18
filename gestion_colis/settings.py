@@ -29,6 +29,12 @@ DEBUG = os.getenv("DEBUG", "0") == "1"
 
 ALLOWED_HOSTS = ["bertille-projet.duckdns.org", "31.97.47.203"]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://bertille-projet.duckdns.org"
+]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 
 # Application definition
 
@@ -147,6 +153,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
 
 # Authentication settings
 LOGIN_URL = 'connexion'  # URL de redirection pour les utilisateurs non connectés
