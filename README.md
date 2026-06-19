@@ -2,6 +2,8 @@
 
 Application web Django pour la gestion de colis avec suivi en temps réel.
 
+🌐**[Voir l'application en ligne](https://bertille-projet.duckdns.org/)**
+
 ## 📋 Description
 
 ManageColis est une application web permettant aux utilisateurs de:
