@@ -30,7 +30,8 @@ DEBUG = False
 ALLOWED_HOSTS = ["bertille-projet.duckdns.org", "31.97.47.203"]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://bertille-projet.duckdns.org"
+    "https://bertille-projet.duckdns.org",
+    "http://bertille-projet.duckdns.org",
 ]
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
